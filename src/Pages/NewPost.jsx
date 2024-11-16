@@ -10,9 +10,9 @@ import {
 	ModalFooter,
 	useDisclosure,
 } from '@nextui-org/react';
-import { db } from '../firebaseConfig'; // Importando o Firestore
 import { collection, addDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
+import { db } from '../fireBaseConfig';
 
 const NewPost = () => {
 	const [title, setTitle] = useState('');
