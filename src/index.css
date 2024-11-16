@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.scrollbar-hide {
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
+}
+
+.modal-content h1 {
+  font-size: 1.75rem; 
+  font-weight: bold;
+}
+
+.modal-content h2 {
+  font-size: 1.5rem; 
+  font-weight: bold;
+}
+
+.modal-content h3 {
+  font-size: 1.25rem; 
+  font-weight: bold;
+}
+
+.modal-content h4 {
+  font-size: 1.125rem; 
+  font-weight: bold;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
+.modal-content .ql-align-left {
+  text-align: left;
+}
+
+.modal-content .ql-align-center {
+  text-align: center;
+}
+
+.modal-content .ql-align-right {
+  text-align: right;
+}
+
+.modal-content .ql-align-justify {
+  text-align: justify;
+}
