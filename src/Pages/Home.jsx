@@ -2,24 +2,23 @@ import { FaLongArrowAltRight } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
 import { Button, Spinner } from '@nextui-org/react';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { db } from '../fireBaseConfig';
+import { collection, getDocs } from 'firebase/firestore';
 
-// Lazy Loading para componentes pesados
-import { lazy, Suspense } from 'react';
-const BannerPrincipal = lazy(() => import('../Components/BannerPrincipal'));
-const CardImg = lazy(() => import('../Components/CardImg'));
-const AccordionComponent = lazy(() => import('../Components/Accordion'));
-const ContactTabs = lazy(() => import('../Components/TabsContact'));
-const AutoScrollContainer = lazy(
-	() => import('../Components/motion/ScrollAuto'),
-);
-const CommentCard = lazy(() => import('../Components/CardComment'));
-const CardPost = lazy(() => import('../Components/CardPost'));
+import BannerPrincipal from '../Components/BannerPrincipal';
+import CardImg from '../Components/CardImg';
+import AccordionComponent from '../Components/Accordion';
+import ContactTabs from '../Components/TabsContact';
+import AutoScrollContainer from '../Components/motion/ScrollAuto';
+import CommentCard from '../Components/CardComment';
+import CardPost from '../Components/CardPost';
 
 import { categorias, comments, faq } from '../assets/Object';
 import useFetchPosts from '../Hooks/useFecthPost';
 
 const Home = () => {
-	const { posts, loading } = useFetchPosts(6); // Hook personalizado para buscar posts
+	const {posts, loading} = useFetchPosts(6)
 	const navigate = useNavigate();
 
 	return (
@@ -28,123 +27,130 @@ const Home = () => {
 				<title>Flora Ervas | Apresentação</title>
 				<meta
 					name='description'
-					content='A Flora Ervas oferece uma ampla variedade de produtos naturais de alta qualidade. Explore nossos produtos e encontre o equilíbrio que você merece.'
+					content='A Flora Ervas oferece uma ampla variedade de produtos naturais de alta qualidade, incluindo chás, ervas, argilas e produtos para o bem-estar. Explore nossos produtos e encontre o equilíbrio que você merece.'
 				/>
 			</Helmet>
 
-			{/* Lazy-loaded Components */}
-			<Suspense
-				fallback={
-					<Spinner label='Carregando...' color='success' labelColor='success' />
-				}
-			>
-				<BannerPrincipal />
+			{/* Banner inicial */}
+			<BannerPrincipal />
 
-				{/* Produtos */}
-				<section className='flex flex-col items-center mt-12'>
-					<div className='flex items-center flex-col space-y-4'>
-						<h2 className='text-3xl font-medium text-gray-800 border-b-4 border-green-600 pb-2'>
-							Nossos Produtos
-						</h2>
-						<p className='text-lg text-gray-700 text-center max-w-md leading-relaxed'>
-							Oferecemos uma ampla variedade de produtos naturais, como argilas,
-							chás, cereais e muito mais.
-						</p>
-						<span className='flex items-center gap-1 text-sm text-gray-600'>
-							Role para ver as categorias <FaLongArrowAltRight />
-						</span>
-					</div>
-					<div className='flex gap-3 overflow-x-auto p-5 scrollbar-hide'>
-						{categorias.map((categoria) => (
-							<CardImg
-								caminho={categoria.img}
-								categoria={categoria.categoria}
-								key={categoria.categoria}
-							/>
-						))}
-					</div>
-				</section>
-
-				{/* Dúvidas Frequentes */}
-				<section className='flex flex-col items-center mt-12'>
-					<h3 className='text-3xl font-medium text-gray-800 border-b-4 border-green-600 pb-1 mb-5'>
-						Dúvidas Frequentes
-					</h3>
-					<div className='flex flex-col lg:flex-row items-center gap-12 max-w-5xl w-full'>
-						<div className='hidden lg:block lg:w-1/2'>
-							<img
-								src='https://images.unsplash.com/photo-1585185466836-93473377a6a5?q=80&w=2071&auto=format&fit=crop'
-								alt='Perguntas Frequentes'
-								className='rounded-lg'
-							/>
-						</div>
-						<div className='w-full lg:w-1/2'>
-							{faq.map((r, index) => (
-								<AccordionComponent
-									title={r.pergunta}
-									textExplicativo={r.resposta}
-									key={index}
-								/>
-							))}
-						</div>
-					</div>
-				</section>
-
-				{/* Contatos */}
-				<section className='flex flex-col items-center mt-12'>
-					<ContactTabs
-						textParagraph='Selecione a opção de contato que mais lhe agrada'
-						textTitle='Opções de Contato'
-					/>
-				</section>
-
-				{/* Comentários */}
-				<section className='mt-12 w-full flex flex-col items-center'>
-					<h3 className='text-3xl font-medium text-gray-800 border-b-4 border-green-600 pb-1 mb-1'>
-						Comentários
-					</h3>
-					<p className='text-lg text-gray-600 text-center mb-6'>
-						Descubra as experiências e opiniões de nossos clientes!
+			{/* Produtos */}
+			<section className='flex justify-center w-full mt-0 flex-col'>
+				<div className='flex items-center flex-col justify-center space-y-4'>
+					<h2 className='text-3xl font-medium text-gray-800 border-b-4 border-green-600 pb-2'>
+						Nossos Produtos
+					</h2>
+					<p className='text-lg text-gray-700 text-center max-w-md mx-auto lg:mx-0 leading-relaxed'>
+						Oferecemos uma ampla variedade de produtos naturais, incluindo
+						argilas, chás, cereais, farinhas, frutas desidratadas, oleaginosas,
+						temperos e muito mais. Ingredientes selecionados para atender ao seu
+						bem-estar e estilo de vida saudável.
 					</p>
-					<AutoScrollContainer scrollSpeed={30}>
-						{comments.map((r, index) => (
-							<CommentCard
-								author={r.author}
-								avatar={r.avatar}
-								content={r.content}
-								date={r.date}
+					<span className='flex items-center gap-1 justify-center text-sm text-gray-600'>
+						Role para ver as categorias <FaLongArrowAltRight />
+					</span>
+				</div>
+				<div className='flex gap-3 overflow-x-auto p-5 scrollbar-hide'>
+					{categorias.map((categoria) => (
+						<CardImg
+							caminho={categoria.img}
+							categoria={categoria.categoria}
+							key={categoria.categoria}
+						/>
+					))}
+					<CardImg
+						produto='Tudo isso pensado para você'
+						categoria='E muito mais!'
+						caminho='https://images.unsplash.com/photo-1667229224351-a3719b5e7ef0?q=80&w=1887&auto=format&fit=crop'
+					/>
+				</div>
+			</section>
+
+			{/* Dúvidas Frequentes */}
+			<section className='flex flex-col items-center mt-12'>
+				<h3 className='text-3xl font-medium text-gray-800 border-b-4 border-green-600 pb-1 mb-5'>
+					Dúvidas Frequentes
+				</h3>
+				<aside className='flex flex-col lg:flex-row items-center justify-between gap-12 max-w-5xl w-full'>
+					<div className='hidden lg:block lg:w-1/2'>
+						<img
+							src='https://images.unsplash.com/photo-1585185466836-93473377a6a5?q=80&w=2071&auto=format&fit=crop'
+							alt='Perguntas Frequentes'
+							className='rounded-lg'
+						/>
+					</div>
+					<div className='w-full lg:w-1/2 p-4 lg:p-0 flex flex-col gap-2'>
+						{faq.map((r, index) => (
+							<AccordionComponent
+								title={r.pergunta}
+								textExplicativo={r.resposta}
+								arialLabel={r.resposta}
 								key={index}
+								itemKey={index}
 							/>
 						))}
-					</AutoScrollContainer>
-				</section>
+					</div>
+				</aside>
+			</section>
 
-				{/* Blog */}
-				<section className='flex flex-col items-center mt-12'>
-					{loading ? (
-						<Spinner
-							label='Carregando, aguarde...'
-							color='success'
-							labelColor='success'
+			{/* Contatos */}
+			<section className='flex flex-col items-center mt-12'>
+				<ContactTabs
+					textParagraph='Selecione a opção de contato que mais lhe agrada'
+					textTitle='Opções de Contato'
+				/>
+			</section>
+
+			{/* Comentários */}
+			<section className='mt-12 w-full flex flex-col items-center'>
+				<h3 className='text-3xl font-medium text-gray-800 border-b-4 border-green-600 pb-1 mb-1'>
+					Comentários
+				</h3>
+				<p className='text-lg text-gray-600 text-center mb-6'>
+					Descubra as experiências e opiniões de nossos clientes!
+				</p>
+				<AutoScrollContainer scrollSpeed={30}>
+					{comments.map((r, index) => (
+						<CommentCard
+							author={r.author}
+							avatar={r.avatar}
+							content={r.content}
+							date={r.date}
+							key={index}
 						/>
-					) : (
-						<>
-							<CardPost
-								posts={posts}
-								titlePost='Veja nosso Blog'
-								heightMin='h-full'
-							/>
-							<Button
-								color='success'
-								onClick={() => navigate('/posts')}
-								className='mt-4'
-							>
-								Ver Mais
-							</Button>
-						</>
-					)}
+					))}
+				</AutoScrollContainer>
+			</section>
+
+			{/* Blog */}
+			{loading ? (
+				<div className='min-h-auto mt-3 flex justify-center items-center bg-gray-100'>
+					<Spinner
+						label='Carregando, aguarde...'
+						color='success'
+						labelColor='success'
+					/>
+				</div>
+			) : (
+				<section className='flex flex-col items-center mt-12'>
+					<CardPost
+						heightMin='h-full flex flex-col items-center'
+						posts={posts}
+						titlePost='Veja nosso Blog'
+						post={false}
+					/>
+					<Button
+						color='success'
+						size='lg'
+						variant='solid'
+						onClick={() => navigate('/posts')}
+						className='text-white text-lg w-48 mt-4'
+						radius='sm'
+					>
+						Ver Mais
+					</Button>
 				</section>
-			</Suspense>
+			)}
 		</main>
 	);
 };
