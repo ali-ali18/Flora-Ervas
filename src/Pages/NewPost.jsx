@@ -8,11 +8,11 @@ import {
 	ModalHeader,
 	useDisclosure,
 } from '@nextui-org/react';
+import QuillEditor from 'Components/quillEditor';
 import { addDoc, collection } from 'firebase/firestore';
+import { db } from 'fireBaseConfig';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import QuillEditor from '../Components/quillEditor';
-import { db } from '../fireBaseConfig';
 
 const NewPost = () => {
 	const [title, setTitle] = useState('');

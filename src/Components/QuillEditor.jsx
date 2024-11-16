@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 
+
 const QuillEditor = ({ defaultContent = '', onChange }) => {
 	const editorRef = useRef(null); // Referência para o elemento onde o editor será montado
 	const quillInstance = useRef(null); // Referência para a instância do Quill

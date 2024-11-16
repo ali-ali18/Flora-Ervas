@@ -3,8 +3,8 @@ import { deleteDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import QuillEditor from '../Components/quillEditor';
-import { db } from '../fireBaseConfig';
+import QuillEditor from 'Components/quillEditor';
+import { db } from 'fireBaseConfig';
 
 const PostEdit = () => {
 	const { id } = useParams();
