@@ -25,7 +25,7 @@ const AllPosts = () => {
 				setLoading(false);
 			}
 		};
-        fetchPosts();
+		fetchPosts();
 	}, []);
 
 	if (loading)
@@ -40,7 +40,7 @@ const AllPosts = () => {
 		);
 
 	return (
-        <CardPost posts={posts} titlePost='Nossos posts'/>
+		<CardPost posts={posts} titlePost='Nossos posts' />
 	);
 };
 export default AllPosts;

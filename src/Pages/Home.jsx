@@ -13,7 +13,6 @@ import { useEffect, useState } from 'react';
 import { db } from '../fireBaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import { HiOutlineExternalLink } from 'react-icons/hi';
 
 const Home = () => {
 	const [posts, setPosts] = useState([]);
@@ -164,6 +163,7 @@ const Home = () => {
 						heightMin='h-full flex flex-col items-center'
 						posts={posts}
 						titlePost='Veja nosso Blog'
+						post={false}
 					/>
 					<Button
 						color='success'

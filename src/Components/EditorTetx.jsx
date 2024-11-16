@@ -3,7 +3,7 @@ import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 
 
-const QuillEditor = ({ defaultContent = '', onChange }) => {
+const EditorText = ({ defaultContent = '', onChange }) => {
 	const editorRef = useRef(null); // Referência para o elemento onde o editor será montado
 	const quillInstance = useRef(null); // Referência para a instância do Quill
 
@@ -45,4 +45,4 @@ const QuillEditor = ({ defaultContent = '', onChange }) => {
 	);
 };
 
-export default QuillEditor;
+export default EditorText;

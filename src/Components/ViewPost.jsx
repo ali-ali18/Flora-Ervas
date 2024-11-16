@@ -70,7 +70,7 @@ const ViewPost = () => {
 	return (
 		<>
 			<ComponentPost post={post} />
-			<CardPost posts={otherPosts} titlePost='Outros posts' />
+			<CardPost posts={otherPosts} titlePost='Outros posts' caminhoPost='/post'/>
 		</>
 	);
 };

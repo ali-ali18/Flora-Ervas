@@ -39,7 +39,7 @@ const PostList = () => {
                     </Button>
 				</div>
 			) : (
-				<CardPost posts={posts} titlePost='Todos os Posts'/>
+				<CardPost posts={posts} titlePost='Todos os Posts' post/>
 			)}
 		</div>
 	);

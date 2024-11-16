@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { db } from '../fireBaseConfig';
-import QuillEditor from '../Components/quillEditor';
+import EditorText from '../Components/EditorTetx';
 const PostEdit = () => {
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -121,7 +121,7 @@ const PostEdit = () => {
 			{/* QuillEditor para o conteúdo */}
 			<div className='mb-4'>
 				<p className='block text-sm font-medium text-gray-700 mb-2'>Conteúdo</p>
-				<QuillEditor
+				<EditorText
 					defaultContent={post.content} // Passe o conteúdo inicial do post
 					onChange={handleContentChange} // Função para atualizar o conteúdo
 				/>

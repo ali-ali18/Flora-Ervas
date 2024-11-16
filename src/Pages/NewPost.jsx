@@ -8,11 +8,11 @@ import {
 	ModalHeader,
 	useDisclosure,
 } from '@nextui-org/react';
-import QuillEditor from '../Components/quillEditor';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../fireBaseConfig';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import EditorText from '../Components/EditorTetx';
 
 const NewPost = () => {
 	const [title, setTitle] = useState('');
@@ -85,7 +85,7 @@ const NewPost = () => {
 					className='focus:outline-none bg-transparent text-lg'
 				/>
 				<div className='border border-gray-300 rounded-lg p-4 bg-white'>
-					<QuillEditor onChange={setContent} />
+					<EditorText onChange={setContent} />
 				</div>
 
 				<div className='flex flex-col space-y-4'>
