@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { doc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { db } from '../firebaseConfig';
 import { Input, Button, Card } from '@nextui-org/react';
 import QuillEditor from '../components/QuillEditor';
 import { toast } from 'react-toastify';
+import { db } from '../fireBaseConfig';
 
 const PostEdit = () => {
 	const { id } = useParams();
