@@ -22,7 +22,9 @@ const Rota = () => {
 	useSessionCheck();
 
 	return (
-		<Suspense fallback={<Spinner color='success' label='Carregando, aguarde...' labelColor='success'/>}>
+		<Suspense fallback={<div className='flex items-center justify-center h-screen'>
+			<Spinner color='success' label='Carregando, aguarde...' labelColor='success'/>
+		</div>}>
 			<Routes>
 				{/* Area do cliente */}
 				<Route

@@ -157,30 +157,3 @@ export const menuFuncionario = [
 	{ name: 'Gerenciar Blog', path: '/dashboard-blog' },
 	{ name: 'Novo Post', path: '/new-post' },
 ];
-// export const autoComplete = [
-// 	{
-// 		label: 'Desenvolvedor',
-// 		value: 'desenvolvedor',
-// 		description:
-// 			'Responsável por desenvolver, manter e implementar novas funcionalidades no sistema, garantindo que ele atenda às necessidades da empresa.',
-// 	},
-// 	{
-// 		label: 'Vendedor',
-// 		value: 'vendedor',
-// 		description:
-// 			'Responsável pelo atendimento ao cliente, respondendo solicitações recebidas através do formulário de contato.',
-// 	},
-// 	{
-// 		label: 'Administrador',
-// 		value: 'administrador',
-// 		description:
-// 			'Responsável por gerenciar toda a página, com acesso privilegiado e comunicação direta com o desenvolvedor para ajustes necessários.',
-// 	},
-// 	{
-// 		label: 'Gestor de Blog e Mídia',
-// 		value: 'blog_midia',
-// 		description:
-// 			'Responsável pela criação, atualização e manutenção do blog da empresa, cuidando de conteúdo e mídia digital.',
-// 	},
-// ];
-
