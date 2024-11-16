@@ -1,9 +1,9 @@
+import { Button, Card, Input } from '@nextui-org/react';
+import { deleteDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { doc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { Input, Button, Card } from '@nextui-org/react';
-import QuillEditor from '../components/QuillEditor';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import QuillEditor from '../Components/quillEditor';
 import { db } from '../fireBaseConfig';
 
 const PostEdit = () => {

@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import QuillEditor from '../components/QuillEditor';
 import {
-	Input,
 	Button,
+	Input,
 	Modal,
-	ModalContent,
-	ModalHeader,
 	ModalBody,
+	ModalContent,
 	ModalFooter,
+	ModalHeader,
 	useDisclosure,
 } from '@nextui-org/react';
-import { collection, addDoc } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import QuillEditor from '../Components/quillEditor';
 import { db } from '../fireBaseConfig';
 
 const NewPost = () => {
