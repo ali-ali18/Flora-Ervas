@@ -1,19 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
 import Layout from '../Layouts/Layout';
-import Home from '../Pages/Home';
-import Error404 from '../Components/Error404';
-import HistoryCardTeam from '../Pages/NossaHistoria';
-import SejaCliente from '../Pages/PaginaSejaCliente';
-import Login from '../Pages/Login';
-import Contatos from '../Pages/Contatos';
 import LayoutFuncionario from '../Layouts/LayoutFuncionario';
-import Funcionario from '../Pages/Funcionario';
 import { useSessionCheck } from '../Hooks/useSessionCheck';
-import DashBoard from '../Pages/DashBoard';
-import NewPost from '../Pages/NewPost';
-import PostEdit from '../Pages/PostEdit';
-import ViewPost from '../Components/ViewPost';
-import AllPosts from '../Components/AllPosts';
+import React, { lazy } from 'react';
+
+const Home = React.lazy(() => import('../Pages/Home'));
+const Error404 = React.lazy(() => import('../Components/Error404'));
+const HistoryCardTeam = React.lazy(() => import('../Pages/NossaHistoria'));
+const SejaCliente = React.lazy(() => import('../Pages/PaginaSejaCliente'));
+const Login = React.lazy(() => import('../Pages/Login'));
+const Contatos = React.lazy(() => import('../Pages/Contatos'));
+const Funcionario = React.lazy(() => import('../Pages/Funcionario'));
+const DashBoard = React.lazy(() => import('../Pages/DashBoard'));
+const NewPost = React.lazy(() => import('../Pages/NewPost'));
+const PostEdit = React.lazy(() => import('../Pages/PostEdit'));
+const ViewPost = React.lazy(() => import('../Components/ViewPost'));
+const AllPosts = React.lazy(() => import('../Components/AllPosts'));
 
 const Rota = () => {
 	useSessionCheck();
