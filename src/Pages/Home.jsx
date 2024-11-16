@@ -31,6 +31,7 @@ const Home = () => {
 					<link key={index}
 					rel='preload'
 					as='image'
+					loading='lazy'
 					href={img.img}
 					/>
 				))}

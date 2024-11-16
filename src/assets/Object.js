@@ -3,27 +3,27 @@ import { label } from 'framer-motion/client';
 export const categorias = [
 	{
 		categoria: 'Argilas',
-		img: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		img: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
 	},
 	{
 		categoria: 'Cereais',
-		img: 'https://images.unsplash.com/photo-1692071106919-01bc0b9b0919?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		img: 'https://images.unsplash.com/photo-1692071106919-01bc0b9b0919?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
 	},
 	{
 		categoria: 'Chás e Ervas',
-		img: 'https://images.unsplash.com/photo-1569094753427-1c73873ee20e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		img: 'https://images.unsplash.com/photo-1569094753427-1c73873ee20e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
 	},
 	{
 		categoria: 'Confeitaria',
-		img: 'https://images.unsplash.com/photo-1589985270958-af9812c8ddb5?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		img: 'https://images.unsplash.com/photo-1589985270958-af9812c8ddb5?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
 	},
 	{
 		categoria: 'Grãos e Sementes',
-		img: 'https://images.unsplash.com/photo-1668723969009-5b3c021b0365?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		img: 'https://images.unsplash.com/photo-1668723969009-5b3c021b0365?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
 	},
 	{
 		categoria: 'Temperos e Especiarias',
-		img: 'https://images.unsplash.com/photo-1517646458010-ea6bd9f4a75f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		img: 'https://images.unsplash.com/photo-1517646458010-ea6bd9f4a75f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.webp',
 	},
 ];
 
