@@ -8,9 +8,9 @@ import {
 	ModalHeader,
 	useDisclosure,
 } from '@nextui-org/react';
-import QuillEditor from 'Components/quillEditor';
+import QuillEditor from '../Components/quillEditor';
 import { addDoc, collection } from 'firebase/firestore';
-import { db } from 'fireBaseConfig';
+import { db } from '../fireBaseConfig';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
