@@ -5,7 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { db } from '../fireBaseConfig';
 import QuillEditor from '../Components/quillEditor';
-
 const PostEdit = () => {
 	const { id } = useParams();
 	const navigate = useNavigate();
