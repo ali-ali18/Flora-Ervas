@@ -11,7 +11,7 @@ import {
 import QuillEditor from '../Components/quillEditor';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../fireBaseConfig';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const NewPost = () => {
