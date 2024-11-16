@@ -2,10 +2,6 @@ import { FaLongArrowAltRight } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
 import { Button, Spinner } from '@nextui-org/react';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { db } from '../fireBaseConfig';
-import { collection, getDocs } from 'firebase/firestore';
-
 import BannerPrincipal from '../Components/BannerPrincipal';
 import CardImg from '../Components/CardImg';
 import AccordionComponent from '../Components/Accordion';
@@ -18,7 +14,7 @@ import { categorias, comments, faq } from '../assets/Object';
 import useFetchPosts from '../Hooks/useFecthPost';
 
 const Home = () => {
-	const {posts, loading} = useFetchPosts(6)
+	const { posts, loading } = useFetchPosts(6);
 	const navigate = useNavigate();
 
 	return (
@@ -29,6 +25,8 @@ const Home = () => {
 					name='description'
 					content='A Flora Ervas oferece uma ampla variedade de produtos naturais de alta qualidade, incluindo chás, ervas, argilas e produtos para o bem-estar. Explore nossos produtos e encontre o equilíbrio que você merece.'
 				/>
+				<link rel='preload' as='image' href='https://images.unsplash.com/photo-1667229224351-a3719b5e7ef0?q=80&w=1887&auto=format&fit=crop'/>
+				<link rel='preload' as='image' href='https://images.unsplash.com/photo-1585185466836-93473377a6a5?q=80&w=2071&auto=format&fit=crop'/>
 			</Helmet>
 
 			{/* Banner inicial */}
