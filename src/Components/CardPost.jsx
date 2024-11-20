@@ -9,7 +9,7 @@ const CardPost = ({ posts, titlePost, heightMin, post = false }) => {
 				{titlePost ? titlePost : 'Sem titulo'}
 			</h1>
 			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-				{posts.map((item) => (
+				{posts.map((item, i) => (
 					<Link
 						to={post ? `/post-edit/${item.id}` : `/post/${item.id}`}
 						key={item.id}

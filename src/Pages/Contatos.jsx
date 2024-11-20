@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { db } from '../fireBaseConfig';
 import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const Contatos = () => {
 	const [contatos, setContatos] = useState([]);

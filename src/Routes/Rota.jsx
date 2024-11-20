@@ -1,23 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
-import Layout from '../Layouts/Layout';
 import Error404 from '../Components/Error404';
+import ViewPost from '../Components/ViewPost';
+import Layout from '../Layouts/Layout';
+import LayoutFuncionario from '../Layouts/LayoutFuncionario';
+import AllPosts from '../Pages/AllPosts';
+import Contatos from '../Pages/Contatos';
+import DashBoard from '../Pages/DashBoard';
+import Funcionario from '../Pages/Funcionario';
+import Home from '../Pages/Home';
+import Login from '../Pages/Login';
+import NewPost from '../Pages/NewPost';
 import HistoryCardTeam from '../Pages/NossaHistoria';
 import SejaCliente from '../Pages/PaginaSejaCliente';
-import Login from '../Pages/Login';
-import Contatos from '../Pages/Contatos';
-import LayoutFuncionario from '../Layouts/LayoutFuncionario';
-import Funcionario from '../Pages/Funcionario';
-import { useSessionCheck } from '../Hooks/useSessionCheck';
-import DashBoard from '../Pages/DashBoard';
-import NewPost from '../Pages/NewPost';
 import PostEdit from '../Pages/PostEdit';
-import ViewPost from '../Components/ViewPost';
-import AllPosts from '../Components/AllPosts';
-import Home from '../Pages/Home';
 
 
 const Rota = () => {
-	useSessionCheck();
 
 	return (
 		<Routes>

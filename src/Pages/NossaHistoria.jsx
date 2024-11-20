@@ -8,8 +8,7 @@ const NossaHistoria = () => {
 				<title>Flora Ervas | Nossa História</title>
 				<meta
 					name='description'
-					content='Explore a história da Flora Ervas, desde sua fundação em 1994. Com anos de experiência e dedicação, nos tornamos uma referência em produtos naturais de alta qualidade. Saiba mais sobre nossa trajetória e nosso compromisso em oferecer o melhor da natureza para você.
-'
+					content='Explore a história da Flora Ervas, desde sua fundação em 1994. Com anos de experiência e dedicação, nos tornamos uma referência em produtos naturais de alta qualidade. Saiba mais sobre nossa trajetória e nosso compromisso em oferecer o melhor da natureza para você.'
 				/>
 			</Helmet>
 

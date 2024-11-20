@@ -2,9 +2,11 @@ import { Link, Button } from '@nextui-org/react';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-const Counter = ({ target, prefix = '' }) => {
+import { useRef } from 'react';
+
+const Counter = ({ target, prefix = '', duration = 5 }) => {
+	const valueRef = useRef(); // Referência ao DOM para atualizar o valor diretamente
 	const controls = useAnimation();
-	const [value, setValue] = useState(0);
 
 	useEffect(() => {
 		controls.start({
@@ -15,14 +17,16 @@ const Counter = ({ target, prefix = '' }) => {
 
 	return (
 		<motion.span
+			ref={valueRef}
 			className='text-3xl lg:text-4xl font-semibold text-green-600'
 			animate={controls}
 			initial={{ count: 0 }}
-			onUpdate={(latest) => setValue(Math.round(latest.count))}
-		>
-			{prefix}
-			{value}
-		</motion.span>
+			onUpdate={(latest) => {
+				if (valueRef.current) {
+					valueRef.current.textContent = `${prefix}${Math.round(latest.count)}`;
+				}
+			}}
+		/>
 	);
 };
 

@@ -25,8 +25,8 @@ const Home = () => {
 					name='description'
 					content='A Flora Ervas oferece uma ampla variedade de produtos naturais de alta qualidade, incluindo chás, ervas, argilas e produtos para o bem-estar. Explore nossos produtos e encontre o equilíbrio que você merece.'
 				/>
-				<link rel='preload' as='image' href='https://images.unsplash.com/photo-1667229224351-a3719b5e7ef0?q=80&w=1887&auto=format&fit=crop'/>
-				<link rel='preload' as='image' href='https://images.unsplash.com/photo-1585185466836-93473377a6a5?q=80&w=2071&auto=format&fit=crop'/>
+				<link rel='preload' as='image' href='https://images.unsplash.com/photo-1667229224351-a3719b5e7ef0?q=80&w=1887&auto=format&fit=crop.webp'/>
+				<link rel='preload' as='image' href='https://images.unsplash.com/photo-1585185466836-93473377a6a5?q=80&w=2071&auto=format&fit=crop.wbep'/>
 				{categorias.map((img, index) => (
 					<link key={index}
 					rel='preload'
@@ -67,7 +67,7 @@ const Home = () => {
 					<CardImg
 						produto='Tudo isso pensado para você'
 						categoria='E muito mais!'
-						caminho='https://images.unsplash.com/photo-1667229224351-a3719b5e7ef0?q=80&w=1887&auto=format&fit=crop'
+						caminho='https://images.unsplash.com/photo-1667229224351-a3719b5e7ef0?q=80&w=1887&auto=format&fit=crop.webp'
 					/>
 				</div>
 			</section>
@@ -80,7 +80,7 @@ const Home = () => {
 				<aside className='flex flex-col lg:flex-row items-center justify-between gap-12 max-w-5xl w-full'>
 					<div className='hidden lg:block lg:w-1/2'>
 						<img
-							src='https://images.unsplash.com/photo-1585185466836-93473377a6a5?q=80&w=2071&auto=format&fit=crop'
+							src='https://images.unsplash.com/photo-1585185466836-93473377a6a5?q=80&w=2071&auto=format&fit=crop.webp'
 							alt='Perguntas Frequentes'
 							className='rounded-lg'
 						/>
