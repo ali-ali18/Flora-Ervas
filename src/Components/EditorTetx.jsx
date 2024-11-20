@@ -1,3 +1,7 @@
+import React, { useRef, useEffect } from 'react';
+import Quill from 'quill';
+import 'quill/dist/quill.snow.css';
+
 const EditorText = ({ defaultContent = '', onChange }) => {
 	const editorRef = useRef(null);
 	const quillInstance = useRef(null);
@@ -8,7 +12,7 @@ const EditorText = ({ defaultContent = '', onChange }) => {
 				theme: 'snow',
 				modules: {
 					toolbar: [
-						[{ header: [1, 2,3, false] }],
+						[{ header: [1, 2, false] }],
 						['bold', 'italic', 'underline'],
 						[{ list: 'ordered' }, { list: 'bullet' }],
 						['link', 'image'],
@@ -53,3 +57,4 @@ const EditorText = ({ defaultContent = '', onChange }) => {
 		/>
 	);
 };
+export default EditorText;
