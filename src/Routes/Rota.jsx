@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import Error404 from '../Components/Error404';
-import ViewPost from '../Components/ViewPost';
 import Layout from '../Layouts/Layout';
 import LayoutFuncionario from '../Layouts/LayoutFuncionario';
 import AllPosts from '../Pages/AllPosts';
@@ -13,6 +12,7 @@ import NewPost from '../Pages/NewPost';
 import HistoryCardTeam from '../Pages/NossaHistoria';
 import SejaCliente from '../Pages/PaginaSejaCliente';
 import PostEdit from '../Pages/PostEdit';
+import ViewPost from '../Pages/ViewPost';
 
 
 const Rota = () => {

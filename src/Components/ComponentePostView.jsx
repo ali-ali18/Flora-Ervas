@@ -1,4 +1,4 @@
-const ComponentPostView = ({post}) => {
+const ComponentPostView = ({ post }) => {
 	return (
 		<div className='max-w-5xl mx-auto p-6'>
 			<h1 className='text-4xl font-bold mb-6 text-gray-800'>{post.title}</h1>
@@ -21,11 +21,11 @@ const ComponentPostView = ({post}) => {
 			</p>
 			<p className='text-lg mb-8 text-gray-700'>{post.description}</p>
 			<div
-				className='prose prose-lg text-gray-800 leading-relaxed'
+				className='ql-editor prose prose-lg text-gray-800 leading-relaxed'
 				dangerouslySetInnerHTML={{ __html: post.content }}
 			></div>
 		</div>
 	);
 };
 
-export default ComponentPostView
+export default ComponentPostView;

@@ -3,9 +3,9 @@ import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import CardPost from '../Components/CardPost';
+import ComponentPost from '../Components/ComponentePostView';
 import { db } from '../fireBaseConfig'; // Certifique-se de que o caminho está correto.
-import ComponentPost from './ComponentePostView';
-import CardPost from './CardPost';
 
 const ViewPost = () => {
 	const { id } = useParams();
