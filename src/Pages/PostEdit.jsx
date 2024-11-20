@@ -122,7 +122,6 @@ const PostEdit = () => {
 			<div className='mb-4'>
 				<p className='block text-sm font-medium text-gray-700 mb-2'>Conteúdo</p>
 				<EditorText
-					defaultContent={post.content} // Passe o conteúdo inicial do post
 					onChange={handleContentChange} // Função para atualizar o conteúdo
 				/>
 			</div>
