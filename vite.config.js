@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import compression from 'vite-plugin-compression';
-import visualizer from 'rollup-plugin-visualizer';
 
 export default defineConfig({
 	plugins: [
@@ -10,7 +9,7 @@ export default defineConfig({
 		compression({ algorithm: 'gzip' }),
 	],
 
-	base: './', // Certifique-se de que o base está correto para seu ambiente de deploy
+	base: '/',
 
 	build: {
 		rollupOptions: {
