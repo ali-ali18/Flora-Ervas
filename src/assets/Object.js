@@ -45,29 +45,6 @@ export const faq = [
 	},
 ];
 
-export const contact = [
-	{
-		key: 'whatsapp',
-		titulo: 'WhatsApp',
-		desc: 'Converse conosco pelo WhatsApp para um atendimento rápido.',
-		link: 'https://wa.me/xxxxxxxxx',
-		icon: 'FaWhatsapp', // Adicione um ícone específico
-	},
-	{
-		key: 'telefone',
-		titulo: 'Telefone',
-		desc: 'Ligue diretamente para nossa central de atendimento.',
-		link: 'tel:+551199999999',
-		icon: 'FaPhone', // Adicione um ícone específico
-	},
-	{
-		key: 'email',
-		titulo: 'E-mail',
-		desc: 'Envie-nos um e-mail e responderemos o mais breve possível.',
-		link: 'mailto:contato@floraervas.com',
-		icon: 'FaEnvelope', // Adicione um ícone específico
-	},
-];
 export const comments = [
 	{
 		avatar:

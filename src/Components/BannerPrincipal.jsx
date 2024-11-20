@@ -1,19 +1,21 @@
 import { Link, Button } from '@nextui-org/react';
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect, useState } from 'react';
-
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const Counter = ({ target, prefix = '', duration = 5 }) => {
 	const valueRef = useRef(); // Referência ao DOM para atualizar o valor diretamente
 	const controls = useAnimation();
 
 	useEffect(() => {
-		controls.start({
-			count: target,
-			transition: { duration: 5, ease: 'easeOut' },
-		});
-	}, [target, controls]);
+		const timeout = setTimeout(() => {
+			controls.start({
+				count: target,
+				transition: { duration, ease: 'easeOut' },
+			});
+		}, 500); 
+
+		return () => clearTimeout(timeout);
+	}, [target, controls, duration]);
 
 	return (
 		<motion.span
@@ -62,7 +64,10 @@ const BannerPrincipal = () => {
 
 			{/* Seção de Texto */}
 			<div className='w-full lg:w-1/2 text-center lg:text-left space-y-6 lg:space-y-8'>
-				<h1 className='text-4xl lg:text-5xl font-semibold text-gray-800 border-b-4 border-green-600 inline-block'>
+				<h1
+					className='text-4xl lg:text-5xl font-semibold text-gray-800 border-b-4 border-green-600 inline-block'
+					style={{ animation: 'none' }}
+				>
 					Flora Ervas
 				</h1>
 				<p className='text-lg lg:text-xl text-gray-700 max-w-lg mx-auto lg:mx-0 leading-relaxed'>
