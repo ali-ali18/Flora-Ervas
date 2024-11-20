@@ -41,7 +41,7 @@ const CardImg = memo(({ categoria, caminho, produto }) => {
 					<Image
 						removeWrapper
 						alt={`foto do produto da categoria ${categoria || 'Não especificada'}`}
-						className='z-0 object-cover w-full h-full'
+						className='z-0 object-cover w-[300px] h-[400px]'
 						src={caminho || 'https://nextui.org/images/card-example-3.jpeg'}
 						lazyLoad
 					/>
