@@ -21,8 +21,10 @@ const EditorText = ({ defaultContent = '', onChange }) => {
 				},
 			});
 
-			quillInstance.current.root.innerHTML = defaultContent;
+			// Adiciona conteúdo inicial ao Quill
+			quillInstance.current.clipboard.dangerouslyPasteHTML(defaultContent);
 
+			// Atualiza o estado com mudanças no texto
 			quillInstance.current.on('text-change', () => {
 				const content = quillInstance.current.root.innerHTML;
 				onChange(content);
@@ -31,24 +33,29 @@ const EditorText = ({ defaultContent = '', onChange }) => {
 	}, [onChange]);
 
 	useEffect(() => {
-		if (
-			quillInstance.current &&
-			quillInstance.current.root.innerHTML !== defaultContent
-		) {
-			quillInstance.current.root.innerHTML = defaultContent;
+		if (quillInstance.current) {
+			// Atualiza o conteúdo no editor se o defaultContent mudar
+			if (quillInstance.current.root.innerHTML !== defaultContent) {
+				quillInstance.current.clipboard.dangerouslyPasteHTML(defaultContent);
+			}
 		}
 	}, [defaultContent]);
 
-	useEffect(() => {
+	// Retorna o HTML atual do editor
+	const getEditorContent = () => {
 		if (quillInstance.current) {
-			quillInstance.current.clipboard.addMatcher(
-				Node.ELEMENT_NODE,
-				(node, delta) => {
-					return delta; // Impede sobrescrita ao colar
-				},
-			);
+			return quillInstance.current.root.innerHTML; // Retorna o HTML
 		}
-	}, []);
+		return '';
+	};
+
+	// Retorna o texto sem formatação
+	const getPlainText = () => {
+		if (quillInstance.current) {
+			return quillInstance.current.getText(); // Retorna o texto puro
+		}
+		return '';
+	};
 
 	return (
 		<div
@@ -57,4 +64,5 @@ const EditorText = ({ defaultContent = '', onChange }) => {
 		/>
 	);
 };
+
 export default EditorText;

@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { db } from '../fireBaseConfig';
 import EditorText from '../Components/EditorTetx';
+
 const PostEdit = () => {
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -21,7 +22,7 @@ const PostEdit = () => {
 					toast.error('Post não encontrado');
 				}
 			} catch (error) {
-				toast.error('Erro ao buscar post:', error);
+				toast.error('Erro ao buscar post:', error.message);
 			}
 		};
 
@@ -44,7 +45,7 @@ const PostEdit = () => {
 			toast.success('Post atualizado com sucesso!');
 			navigate('/dashboard-blog');
 		} catch (error) {
-			toast.error('Erro ao atualizar post:');
+			toast.error('Erro ao atualizar post');
 		}
 	};
 
@@ -55,7 +56,7 @@ const PostEdit = () => {
 			toast.success('Post excluído com sucesso!');
 			navigate('/dashboard-blog'); // Redireciona para a página de posts após a exclusão
 		} catch (error) {
-			toast.error('Erro ao excluir post:');
+			toast.error('Erro ao excluir post');
 		}
 	};
 
@@ -122,7 +123,8 @@ const PostEdit = () => {
 			<div className='mb-4'>
 				<p className='block text-sm font-medium text-gray-700 mb-2'>Conteúdo</p>
 				<EditorText
-					onChange={handleContentChange} // Função para atualizar o conteúdo
+					defaultContent={post.content} // Passa o conteúdo atual para o editor
+					onChange={handleContentChange} // Função para atualizar o conteúdo no estado
 				/>
 			</div>
 
@@ -137,14 +139,14 @@ const PostEdit = () => {
 				>
 					Salvar Alterações
 				</Button>
-                <Button
-                variant='solid'
-                onClick={handleDeletePost}
-                className='w-full'
-                color='danger'
-                >
-                    Deletar Post
-                </Button>
+				<Button
+					variant='solid'
+					onClick={handleDeletePost}
+					className='w-full'
+					color='danger'
+				>
+					Deletar Post
+				</Button>
 			</div>
 		</div>
 	);
