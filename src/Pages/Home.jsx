@@ -82,7 +82,7 @@ const Home = () => {
 						<img
 							src='https://images.unsplash.com/photo-1585185466836-93473377a6a5?q=80&w=2071&auto=format&fit=crop.webp'
 							alt='Perguntas Frequentes'
-							className='rounded-lg'
+							className='rounded-lg w-[450px] h-[300px]'
 						/>
 					</div>
 					<div className='w-full lg:w-1/2 p-4 lg:p-0 flex flex-col gap-2'>

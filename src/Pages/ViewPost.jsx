@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import CardPost from '../Components/CardPost';
 import ComponentPost from '../Components/ComponentePostView';
 import { db } from '../fireBaseConfig'; // Certifique-se de que o caminho está correto.
+import { Helmet } from 'react-helmet-async';
 
 const ViewPost = () => {
 	const { id } = useParams();

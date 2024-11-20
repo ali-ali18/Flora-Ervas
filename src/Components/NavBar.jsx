@@ -43,6 +43,7 @@ const NavBarMenu = ({
 						>
 							{item.name}
 						</Link>
+						{/* https://www.floraervasloja.com.br/ */}
 					</NavbarItem>
 				))}
 			</NavbarContent>

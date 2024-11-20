@@ -1,6 +1,14 @@
+import { Helmet } from 'react-helmet-async';
+
 const ComponentPostView = ({ post }) => {
 	return (
 		<div className='max-w-5xl mx-auto p-6'>
+			<Helmet>
+				<title>Flora Ervas | {post.title}</title>
+				<meta
+					name='description'
+					content={post.description}/>
+			</Helmet>
 			<h1 className='text-4xl font-bold mb-6 text-gray-800'>{post.title}</h1>
 			{post.imageURL && (
 				<div className='relative overflow-hidden rounded-lg mb-6'>

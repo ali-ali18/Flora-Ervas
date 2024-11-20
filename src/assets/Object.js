@@ -126,6 +126,7 @@ export const menuCliente = [
 	{ name: 'Seja Nosso Cliente', path: '/seja-nosso-cliente' },
 	{ name: 'Nossa História', path: '/nossa-historia' },
 	{ name: 'Blog', path: '/posts' },
+	{}
 ];
 
 export const menuFuncionario = [
